@@ -1,19 +1,22 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/models/url_launcher.dart';
-import 'package:app_portfolio/ui/about.dart';
-import 'package:app_portfolio/ui/contact.dart';
+import 'package:app_portfolio/widgets/desktop/about_desktop.dart';
+import 'package:app_portfolio/widgets/desktop/contact_me_desktop.dart';
 import 'package:app_portfolio/ui/featured_project.dart';
-import 'package:app_portfolio/ui/footer.dart';
-import 'package:app_portfolio/ui/work.dart';
+import 'package:app_portfolio/widgets/desktop/project_showcase_desktop.dart';
+
+import 'package:app_portfolio/widgets/desktop/work_desktop.dart';
 import 'package:app_portfolio/widgets/app_bar_title.dart';
 import 'package:app_portfolio/widgets/app_showcase_model.dart';
 import 'package:app_portfolio/widgets/custom_text.dart';
-import 'package:app_portfolio/widgets/landing_desktop.dart';
+import 'package:app_portfolio/widgets/desktop/desktop_footer.dart';
+import 'package:app_portfolio/widgets/desktop/social_icons_desktop.dart';
+import 'package:app_portfolio/widgets/desktop/landing_desktop.dart';
 import 'package:app_portfolio/widgets/main_title.dart';
-import 'package:app_portfolio/widgets/os_images.dart';
+
 import 'package:app_portfolio/widgets/showcase_app_item.dart';
-import 'package:app_portfolio/widgets/social_icons_desktop.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   UrlLauncher method = UrlLauncher();
   late AutoScrollController _autoScrollController;
   final scrollDirection = Axis.vertical;
-  
+
   bool isExpanded = true;
 
   bool get _isAppBarExpanded {
@@ -49,13 +52,11 @@ class _HomePageState extends State<HomePage> {
                 ? setState(
                     () {
                       isExpanded = false;
-                      
                     },
                   )
                 : {}
             : isExpanded != true
                 ? setState(() {
-                    
                     isExpanded = true;
                   })
                 : {},
@@ -69,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     _autoScrollController.highlight(index);
   }
 
-  Widget _wrapScrollTag({required int index,required Widget child}) {
+  Widget _wrapScrollTag({required int index, required Widget child}) {
     return AutoScrollTag(
       key: ValueKey(index),
       controller: _autoScrollController,
@@ -84,10 +85,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: AppConstants.primaryColor,
         body: SingleChildScrollView(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           primary: true,
           scrollDirection: Axis.vertical,
-         
           child: Column(
             children: [
               //Navigation Bar
@@ -98,19 +98,19 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image(
-                                      fit: BoxFit.fitHeight,
-                                      height: size.height * 0.06,
-                                      width: size.width * 0.06,
-                                      image: const AssetImage("images/website_logo_3.png"),
-                                    ),
-                        
+                      GestureDetector(
+                        onTap:(){_scrollToIndex(0);},
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image(
+                            fit: BoxFit.fitHeight,
+                            height: 50,
+                            width: 50,
+                            image: const AssetImage("images/website_logo_3.png"),
+                          ),
+                        ),
                       ),
-                     
-                     
-                      const Spacer(),
+                      
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                             child: TabBar(
                               indicatorColor: Colors.transparent,
                               onTap: (index) async {
-                                _scrollToIndex(index);
+                                _scrollToIndex(index+1);
                               },
                               tabs: [
                                 Tab(
@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      Padding(
+                      /* Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
                         child: Card(
                           elevation: 4.0,
@@ -167,14 +167,14 @@ class _HomePageState extends State<HomePage> {
                             child: TextButton(
                               onPressed: () {
                                 //method.launchURL(
-                                  //  "https://drive.google.com/file/d/1yHLcrN5pCUGIeT8SrwC2L95Lv0MVbJpx/view?usp=sharing");
+                                //  "https://drive.google.com/file/d/1yHLcrN5pCUGIeT8SrwC2L95Lv0MVbJpx/view?usp=sharing");
                               },
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 8.0,
                                 ),
                                 child: Text(
-                                  "Resume",
+                                  "Resumé",
                                   style: TextStyle(
                                     color: AppConstants.secondaryColor,
                                   ),
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                      ),
+                      ), */
                     ],
                   ),
                 ),
@@ -203,87 +203,36 @@ class _HomePageState extends State<HomePage> {
                           slivers: <Widget>[
                             SliverList(
                                 delegate: SliverChildListDelegate([
-                              
-                              LandingDesktop(size: size),
+                              _wrapScrollTag(index: 0, child: 
+                              LandingDesktop(size: size),),
                               //About Me
                               _wrapScrollTag(
-                                index: 0,
-                                child: About(),
+                                index: 1,
+                                child: AboutDesktop(),
                               ),
                               SizedBox(
                                 height: size.height * 0.02,
                               ),
 
                               //Where I've Worked
-                              _wrapScrollTag(index: 1, child: Work()),
+                              _wrapScrollTag(index: 2, child: WorkDesktop()),
                               SizedBox(
                                 height: size.height * 0.10,
                               ),
 
-                              //Some Things I've Built Main Project
+                              //Project Showcase
                               _wrapScrollTag(
-                                  index: 2,
-                                  child: Column(
-                                    children: [
-                                      MainTiitle(
-                                        number: "3.",
-                                        text: "Project Showcase",
-                                      ),
-                                      SizedBox(
-                                        height: size.height * 0.04,
-                                      ),
-                                      LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          return Wrap(
-                                            spacing: 16.0,
-                                            runSpacing: 16.0,
-                                            children: apps.map((e) {
-                                              final availableWidth = constraints.maxWidth;
+                                  index: 3,
+                                  child: ProjectShowcaseDesktop(size: size)),
 
-                                              final rowItemCount = constraints.maxWidth > 1000 ? 4 : constraints.maxWidth > 800 ? 3 : 1
-                                              
-                                                      ;
-
-                                              final itemWidth = (availableWidth - ((rowItemCount - 1) * 16.0)) / rowItemCount;
-
-                                              return SizedBox(
-                                                width: itemWidth,
-                                                child: ShowcaseAppItem(e),
-                                              );
-                                            }).toList(),
-                                          );
-                                        },
-                                      ), 
-                                      SizedBox(height: 30,),
-                                            Container(
-                                              child: FeatureProject(
-                                          imagePath: "images/call_script_screenshot.png",
-                                          ontab: () {
-                                            
-                                          },
-                                          projectDesc:
-                                              "A call script for Great Direct Concepts LLC. that allows the call center to process incoming calls, record caller information, save notes, and transmit the call information to Great Direct Concepts' corporate headquarters.",
-                                          projectTitle: "GDC Call Script",
-                                          tech1: "Dart",
-                                          isGithubDisplayed: false,
-                                          tech2: "Flutter Web",
-                                          tech3: "Flutter_Bloc",
-                                        ),
-                 ),
-                                    ],
-                                  )),
-
-                             
-
-                              //Get In Touch
+                              //Contact Me
                               _wrapScrollTag(
-                                index: 3,
+                                index: 4,
                                 child: Column(
                                   children: [
-                                    
-                                   ContactMe(),
+                                    ContactMeDesktop(),
                                     //Footer
-                                    Footer()
+                                    const DesktopFooter()
                                   ],
                                 ),
                               ),

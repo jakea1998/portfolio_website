@@ -1,4 +1,3 @@
-
 import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/widgets/animated_image_overlay.dart';
 import 'package:app_portfolio/widgets/app_showcase_model.dart';
@@ -8,12 +7,12 @@ import 'package:app_portfolio/widgets/source_aware_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class ShowcaseAppItem extends StatelessWidget {
   final ShowcaseAppModel app;
-
+  final bool displayOverlay;
   const ShowcaseAppItem(
-    this.app, {
+    this.app,  {
+      this.displayOverlay = true,
     Key? key,
   }) : super(key: key);
 
@@ -47,7 +46,7 @@ class ShowcaseAppItem extends StatelessWidget {
                   },
                 );
               },
-              child: AnimatedImageOverlay(app.topic),
+              child: displayOverlay ? AnimatedImageOverlay(app.topic) : Container(),
             ),
           ),
         ],

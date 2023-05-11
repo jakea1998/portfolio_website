@@ -2,10 +2,9 @@ import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-
-class MainTiitle extends StatelessWidget {
+class MainTitle extends StatelessWidget {
   final String number, text;
-  MainTiitle({required this.number, required this.text});
+  MainTitle({required this.number, required this.text});
   @override
   Widget build(BuildContext context) {
     return Row(
