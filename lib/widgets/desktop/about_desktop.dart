@@ -1,13 +1,14 @@
 import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AboutDesktop extends StatelessWidget {
   Widget technology(BuildContext context, String text) {
     return Row(
       children: [
-        Icon(
-          Icons.skip_next,
+       FaIcon(
+          FontAwesomeIcons.trophy,
           color: AppConstants.secondaryColor.withOpacity(0.6),
           size: 14.0,
         ),

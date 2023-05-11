@@ -46,8 +46,9 @@ class _HomePageState extends State<HomePage> {
       viewportBoundaryGetter: () =>
           Rect.fromLTRB(0, 0, 0, MediaQuery.of(context).padding.bottom),
       axis: scrollDirection,
-    )..addListener(
-        () => _isAppBarExpanded
+    )..addListener(() {
+       
+        _isAppBarExpanded
             ? isExpanded != false
                 ? setState(
                     () {
@@ -59,8 +60,8 @@ class _HomePageState extends State<HomePage> {
                 ? setState(() {
                     isExpanded = true;
                   })
-                : {},
-      );
+                : {};
+      });
     super.initState();
   }
 
@@ -99,27 +100,33 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     children: [
                       GestureDetector(
-                        onTap:(){_scrollToIndex(0);},
+                        onTap: () {
+                          _scrollToIndex(0);
+                        },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Image(
                             fit: BoxFit.fitHeight,
                             height: 50,
                             width: 50,
-                            image: const AssetImage("images/website_logo_3.png"),
+                            image: const AssetImage(
+                                "${AppConstants.isReleaseMode ? "assets/" : ""}images/website_logo_3.png"),
                           ),
                         ),
                       ),
-                      
+                      Spacer(
+                        flex: 1,
+                      ),
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: DefaultTabController(
                             length: 4,
                             child: TabBar(
-                              indicatorColor: Colors.transparent,
+                              indicatorColor: Colors.white,
+                              indicatorPadding: EdgeInsets.all(8),
                               onTap: (index) async {
-                                _scrollToIndex(index+1);
+                                _scrollToIndex(index + 1);
                               },
                               tabs: [
                                 Tab(
@@ -203,8 +210,10 @@ class _HomePageState extends State<HomePage> {
                           slivers: <Widget>[
                             SliverList(
                                 delegate: SliverChildListDelegate([
-                              _wrapScrollTag(index: 0, child: 
-                              LandingDesktop(size: size),),
+                              _wrapScrollTag(
+                                index: 0,
+                                child: LandingDesktop(size: size),
+                              ),
                               //About Me
                               _wrapScrollTag(
                                 index: 1,

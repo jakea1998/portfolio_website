@@ -7,6 +7,7 @@ import 'package:app_portfolio/widgets/showcase_app_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProjectShowcaseMobile extends StatelessWidget {
   final Size size;
@@ -14,8 +15,8 @@ class ProjectShowcaseMobile extends StatelessWidget {
   Widget technology(BuildContext context, String text) {
     return Row(
       children: [
-        Icon(
-          Icons.skip_next,
+        FaIcon(
+          FontAwesomeIcons.trophy,
           color: AppConstants.secondaryColor.withOpacity(0.6),
           size: 14.0,
         ),
@@ -96,7 +97,7 @@ class ProjectShowcaseMobile extends StatelessWidget {
                     color: Colors.redAccent,
                     child: const Image(
                       fit: BoxFit.contain,
-                      image: AssetImage('images/call_script_screenshot.png' ?? ""),
+                      image: AssetImage('${AppConstants.isReleaseMode ? "assets/" : ""}images/call_script_screenshot.png' ?? ""),
                     ),
                   ),
                   SizedBox(height:15),

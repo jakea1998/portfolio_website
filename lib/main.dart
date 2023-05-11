@@ -1,3 +1,4 @@
+import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/ui/home.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Jake Stegeman',
+     
       debugShowCheckedModeBanner: false,
       home: Home(),
     );

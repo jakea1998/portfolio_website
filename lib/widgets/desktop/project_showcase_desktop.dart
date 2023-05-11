@@ -1,3 +1,4 @@
+import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/ui/featured_project.dart';
 import 'package:app_portfolio/widgets/app_showcase_model.dart';
 import 'package:app_portfolio/widgets/main_title.dart';
@@ -57,7 +58,7 @@ class ProjectShowcaseDesktop extends StatelessWidget {
                                       Container(
                                         child: FeatureProject(
                                           imagePath:
-                                              "images/call_script_screenshot.png",
+                                              "${AppConstants.isReleaseMode ? "assets/" : ""}images/call_script_screenshot.png",
                                           ontab: () {},
                                           projectDesc:
                                               "A call script for Great Direct Concepts LLC. that allows the call center to process incoming calls, record caller information, save notes, and transmit the call information to Great Direct Concepts' corporate headquarters.",

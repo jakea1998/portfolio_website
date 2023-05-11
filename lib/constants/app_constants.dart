@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppConstants {
+  static const isReleaseMode = true;
   static const dividerColor = Color(0xFF464751);
   //static const primaryColor = Color.fromRGBO(47, 49, 64, 1.0);
   static const primaryColor = Color(0xff0A192F);
@@ -18,8 +19,10 @@ abstract class AppConstants {
   static const landingTitle = 'Jake Stegeman';
   static const bio_1 =
       "Hello! I'm Jake, a developer located in Overland Park, Kansas.\n\nFor the last 3 years, I've worked as a freelance developer specializing in developing mobile and web apps using the Flutter SDK. My goal is to build high quality, performant apps with a high degree of Customer satisfaction.\n\n";
-  static const bio_2 = "In December of 2022, I graduated with my Bachelor's degree in Mechanical Engineering from Kansas State University, with a double minor in Computer Science and Business.\n\n";
-  static const bio_3 = "Here are a few technologies I've been working with recently:\n\n";
+  static const bio_2 =
+      "In December of 2022, I graduated with my Bachelor's degree in Mechanical Engineering from Kansas State University, with a double minor in Computer Science and Business.\n\n";
+  static const bio_3 =
+      "Here are a few technologies I've been working with recently:\n\n";
   static const version = '1.0.1';
   static const webSiteURL = 'www.jakestegeman.com';
   static const gitHubProfileURL = 'https://github.com/jakea1998';

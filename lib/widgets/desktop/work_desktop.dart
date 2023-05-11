@@ -84,7 +84,7 @@ class _WorkDesktopState extends State<WorkDesktop> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image(
                                         image: AssetImage(
-                                            "images/guru_app_logo.png"),
+                                            "${AppConstants.isReleaseMode ? "assets/" : ""}images/guru_app_logo.png"),
                                         fit: BoxFit.fitWidth),
                                   )),
                               Container(
@@ -97,7 +97,7 @@ class _WorkDesktopState extends State<WorkDesktop> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image(
                                         image: AssetImage(
-                                            "images/1000HoursOutside_logo.png"),
+                                            "${AppConstants.isReleaseMode ? "assets/" : ""}images/1000HoursOutside_logo.png"),
                                         fit: BoxFit.fitWidth),
                                   )),
                               Container(
@@ -110,7 +110,7 @@ class _WorkDesktopState extends State<WorkDesktop> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image(
                                         image: AssetImage(
-                                            "images/bands_around_the_world_logo.png"),
+                                            "${AppConstants.isReleaseMode ? "assets/" : ""}images/bands_around_the_world_logo.png"),
                                         fit: BoxFit.fitWidth),
                                   )),
                               Container(
@@ -123,7 +123,7 @@ class _WorkDesktopState extends State<WorkDesktop> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image(
                                         image: AssetImage(
-                                            "images/be_bold_logo.png"),
+                                            "${AppConstants.isReleaseMode ? "assets/" : ""}images/be_bold_logo.png"),
                                         fit: BoxFit.fitWidth),
                                   )),
                               Container(
@@ -136,7 +136,7 @@ class _WorkDesktopState extends State<WorkDesktop> {
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image(
                                         image: AssetImage(
-                                            "images/great_direct_logo.png"),
+                                            "${AppConstants.isReleaseMode ? "assets/" : ""}images/great_direct_logo.png"),
                                         fit: BoxFit.fitWidth),
                                   )),
                             ],

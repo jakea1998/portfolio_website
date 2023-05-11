@@ -22,7 +22,7 @@ class SocialIconsDesktop extends StatelessWidget {
               method.launchURL(AppConstants.upworkProfileURL);
             },
             child: Image(
-              image: AssetImage('images/upwork-2.png'),
+              image: AssetImage('${AppConstants.isReleaseMode ? "assets/" : ""}images/upwork-2.png'),
               width: 20,
               height: 20,
             ),

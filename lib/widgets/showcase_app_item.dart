@@ -27,13 +27,8 @@ class ShowcaseAppItem extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          _buildChild(),
-          Positioned(
-            top: 0.0,
-            // bottom: 192.0,
-            left: 0.0,
-            right: 0.0,
-            child: GestureDetector(
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
               // When overlay tapped, open full screen interactive image viewer.
               onTap: () {
                 showGeneralDialog(
@@ -46,9 +41,9 @@ class ShowcaseAppItem extends StatelessWidget {
                   },
                 );
               },
-              child: displayOverlay ? AnimatedImageOverlay(app.topic) : Container(),
-            ),
-          ),
+              
+            child: _buildChild()),
+         
         ],
       ),
     );
@@ -60,9 +55,18 @@ class ShowcaseAppItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SourceAwareImage(
-            image: app.image,
-            isNetworkImage: app.isNetworkImage,
+          Stack(
+            children: [
+              SourceAwareImage(
+                image: app.image,
+                isNetworkImage: app.isNetworkImage,
+              ),
+              Positioned(
+                top: 0,
+                right: 0,
+                left: 0,
+                child: displayOverlay ? AnimatedImageOverlay(app.topic) : Container()),
+            ],
           ),
           _buildBottom(),
         ],
