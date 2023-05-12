@@ -14,6 +14,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
 class MobileHome extends StatefulWidget {
+  final Size size;
+  MobileHome({super.key, required this.size});
   @override
   _MobileHomeState createState() => _MobileHomeState();
 }
@@ -70,7 +72,7 @@ class _MobileHomeState extends State<MobileHome> {
   @override
   Widget build(BuildContext context) {
     
-    final Size size = MediaQuery.of(context).size;
+    
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: AppConstants.primaryColor,
@@ -192,47 +194,47 @@ class _MobileHomeState extends State<MobileHome> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               _wrapScrollTag(index: 0, child: 
-              LandingMobile(size: size),),
+              LandingMobile(size: widget.size),),
               SizedBox(
-                height: size.height * 0.08,
+                height: widget.size.height * 0.08,
               ),
 
               //About me
               _wrapScrollTag(index: 1, child:
               AboutMobile(
-                size: size,
+                size: widget.size,
               ),),
               //Where I've Worked title
               _wrapScrollTag(index: 2, child:
-              WorkMobile(size: size),),
+              WorkMobile(size: widget.size),),
 
               // MobileWork(),
 
               SizedBox(
-                height: size.height * 0.07,
+                height: widget.size.height * 0.07,
               ),
               _wrapScrollTag(index: 3, child:
-              ProjectShowcaseMobile(size: size),),
+              ProjectShowcaseMobile(size: widget.size),),
               
  
               SizedBox(
-                height: size.height * 0.07,
+                height: widget.size.height * 0.07,
               ),
               _wrapScrollTag(index: 4, child: 
-              ContactMeMobile(size: size),),
+              ContactMeMobile(size: widget.size),),
 
               SizedBox(
-                height: size.height * 0.07,
+                height: widget.size.height * 0.07,
               ),
 
               SocialIconsMobile(),
 
               SizedBox(
-                height: size.height * 0.07,
+                height: widget.size.height * 0.07,
               ),
 
               //Footer
-              MobileFooter()
+              MobileFooter(size: widget.size,)
             ],
           ),
         ),

@@ -23,12 +23,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:scroll_to_index/scroll_to_index.dart';
 
-class HomePage extends StatefulWidget {
+class DesktopHomePage extends StatefulWidget {
+  final Size size;
+  DesktopHomePage({super.key,required this.size,});
   @override
-  _HomePageState createState() => _HomePageState();
+  _DesktopHomePageState createState() => _DesktopHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _DesktopHomePageState extends State<DesktopHomePage> {
   UrlLauncher method = UrlLauncher();
   late AutoScrollController _autoScrollController;
   final scrollDirection = Axis.vertical;
@@ -47,7 +49,6 @@ class _HomePageState extends State<HomePage> {
           Rect.fromLTRB(0, 0, 0, MediaQuery.of(context).padding.bottom),
       axis: scrollDirection,
     )..addListener(() {
-       
         _isAppBarExpanded
             ? isExpanded != false
                 ? setState(
@@ -82,19 +83,19 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    
     return Scaffold(
         backgroundColor: AppConstants.primaryColor,
         body: SingleChildScrollView(
-          physics: const ScrollPhysics(),
+          physics: NeverScrollableScrollPhysics(),
           primary: true,
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
               //Navigation Bar
               Container(
-                height: size.height * 0.14,
-                width: size.width,
+                height: widget.size.height * 0.14,
+                width: widget.size.width,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Row(
@@ -154,43 +155,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      /* Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
-                        child: Card(
-                          elevation: 4.0,
-                          color: AppConstants.secondaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.0),
-                          ),
-                          child: Container(
-                            margin: EdgeInsets.all(0.85),
-                            height: size.height * 0.07,
-                            width: size.height * 0.20,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Color(0xff0A192F),
-                              borderRadius: BorderRadius.circular(6.0),
-                            ),
-                            child: TextButton(
-                              onPressed: () {
-                                //method.launchURL(
-                                //  "https://drive.google.com/file/d/1yHLcrN5pCUGIeT8SrwC2L95Lv0MVbJpx/view?usp=sharing");
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 8.0,
-                                ),
-                                child: Text(
-                                  "Resumé",
-                                  style: TextStyle(
-                                    color: AppConstants.secondaryColor,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ), */
+                     
                     ],
                   ),
                 ),
@@ -199,10 +164,10 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   //Social Icon
-                  SocialIconsDesktop(),
+                  SocialIconsDesktop(size: widget.size,),
                   Expanded(
                     child: Container(
-                      height: size.height - 82,
+                      height: widget.size.height - 82,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: CustomScrollView(
@@ -212,36 +177,36 @@ class _HomePageState extends State<HomePage> {
                                 delegate: SliverChildListDelegate([
                               _wrapScrollTag(
                                 index: 0,
-                                child: LandingDesktop(size: size),
+                                child: LandingDesktop(size: widget.size),
                               ),
                               //About Me
                               _wrapScrollTag(
                                 index: 1,
-                                child: AboutDesktop(),
+                                child: AboutDesktop(size: widget.size,),
                               ),
                               SizedBox(
-                                height: size.height * 0.02,
+                                height: widget.size.height * 0.02,
                               ),
 
                               //Where I've Worked
-                              _wrapScrollTag(index: 2, child: WorkDesktop()),
+                              _wrapScrollTag(index: 2, child: WorkDesktop(size:widget.size)),
                               SizedBox(
-                                height: size.height * 0.10,
+                                height: widget.size.height * 0.10,
                               ),
 
                               //Project Showcase
                               _wrapScrollTag(
                                   index: 3,
-                                  child: ProjectShowcaseDesktop(size: size)),
+                                  child: ProjectShowcaseDesktop(size: widget.size)),
 
                               //Contact Me
                               _wrapScrollTag(
                                 index: 4,
                                 child: Column(
                                   children: [
-                                    ContactMeDesktop(),
+                                    ContactMeDesktop(size: widget.size,),
                                     //Footer
-                                    const DesktopFooter()
+                                    DesktopFooter(size: widget.size,)
                                   ],
                                 ),
                               ),
@@ -252,8 +217,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.07,
-                    height: MediaQuery.of(context).size.height - 82,
+                    width: widget.size.width * 0.07,
+                    height:widget.size.height - 82,
                     //color: Colors.orange,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,

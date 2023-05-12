@@ -22,14 +22,13 @@ class ProjectShowcaseDesktop extends StatelessWidget {
                                       SizedBox(
                                         height: size.height * 0.04,
                                       ),
-                                      LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          return Wrap(
+                                      
+                                         Wrap(
                                             spacing: 16.0,
                                             runSpacing: 16.0,
                                             children: apps.map((e) {
                                               final availableWidth =
-                                                  constraints.maxWidth;
+                                                  size.width;
 
                                               final rowItemCount = availableWidth >
                                                       1000
@@ -49,8 +48,8 @@ class ProjectShowcaseDesktop extends StatelessWidget {
                                                 child: ShowcaseAppItem(e),
                                               );
                                             }).toList(),
-                                          );
-                                        },
+                                          
+                                        
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -61,7 +60,7 @@ class ProjectShowcaseDesktop extends StatelessWidget {
                                               "${AppConstants.isReleaseMode ? "assets/" : ""}images/call_script_screenshot.png",
                                           ontab: () {},
                                           projectDesc:
-                                              "A call script for Great Direct Concepts LLC. that allows the call center to process incoming calls, record caller information, save notes, and transmit the call information to Great Direct Concepts' corporate headquarters.",
+                                              "A logic-based call script for Great Direct Concepts LLC. that allows the call center to process incoming calls, record caller information, save notes, and transmit the call information to Great Direct Concepts' corporate headquarters.",
                                           projectTitle: "GDC Call Script",
                                           tech1: "Dart",
                                           isGithubDisplayed: false,

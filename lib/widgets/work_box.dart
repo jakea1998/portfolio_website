@@ -12,7 +12,7 @@ class WorkBox extends StatelessWidget {
         WorkCustomData(
           title: "Golf Home Guru",
           subTitle:
-              "Developed a mobile application for the Golf Home Guru, a real estate agent in Southwest Florida, USA. The \napplication is built using Flutter and Dart and is available on both Android and iOS. The application \nallows users to search for homes in the area, view details about the homes, and contact the real estate \nagent.",
+              "Developed a Flutter-based mobile app for the Golf Home Guru, a real estate agent in Southwest Florida, USA. The application allows users to search for homes in the area, view details about the homes, and contact the real estate agent.",
           duration: "2021",
         ),
         WorkCustomData(

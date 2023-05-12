@@ -19,13 +19,13 @@ class WorkCustomData extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 22.0,
             color: Color(0xffCCD6F6),
             fontWeight: FontWeight.w700,
           ),
         ),
-        SizedBox(
+       const SizedBox(
           height: 6.0,
         ),
         Text(

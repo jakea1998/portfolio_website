@@ -6,11 +6,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class ContactMeDesktop extends StatelessWidget {
-  ContactMeDesktop({super.key});
+  final Size size;
+  ContactMeDesktop({super.key,required this.size});
   final method = UrlLauncher();
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    
     return Container(
       height: size.height * 0.38,
       width: MediaQuery.of(context).size.width - 100,
@@ -40,7 +41,7 @@ class ContactMeDesktop extends StatelessWidget {
           Wrap(
             children: [
               Text(
-                "If you'd like to contact me regarding a job opportunity, project, or just want to say hi,\n please reach out! I'll get back to you as soon as possible.",
+                "If you'd like to contact me regarding a job opportunity, project, or would like to request references,\n please reach out! I'll get back to you as soon as possible.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white.withOpacity(0.4),

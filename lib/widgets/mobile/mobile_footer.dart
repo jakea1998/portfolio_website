@@ -3,14 +3,15 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class MobileFooter extends StatelessWidget {
-  const MobileFooter({super.key});
+  final Size size;
+  const MobileFooter({super.key,required this.size});
 
   @override
   Widget build(BuildContext context) {
     return  Container(
                 alignment: Alignment.center,
-                height: MediaQuery.of(context).size.height / 6,
-                width: MediaQuery.of(context).size.width,
+                height: size.height / 6,
+                width: size.width,
                 //color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

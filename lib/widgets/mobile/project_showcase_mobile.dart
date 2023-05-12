@@ -45,16 +45,14 @@ class ProjectShowcaseMobile extends StatelessWidget {
                                       SizedBox(
                                         height: size.height * 0.04,
                                       ),
-                                      LayoutBuilder(
-                                        builder: (context, constraints) {
-                                          return Wrap(
+                                       Wrap(
                                             spacing: 16.0,
                                             runSpacing: 16.0,
                                             children: apps.map((e) {
                                               final availableWidth =
-                                                  constraints.maxWidth-40;
+                                                 size.width-40;
 
-                                              final rowItemCount = constraints.maxWidth > 800
+                                              final rowItemCount = size.width > 800
                                                       ? 3
                                                       : 1;
 
@@ -69,8 +67,8 @@ class ProjectShowcaseMobile extends StatelessWidget {
                                                 child: ShowcaseAppItem(e,displayOverlay: false,),
                                               );
                                             }).toList(),
-                                          );
-                                        },
+                                       
+                                        
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -111,7 +109,7 @@ class ProjectShowcaseMobile extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 16),
                           child: CustomText(
-                            text: "A call script for Great Direct Concepts LLC. that allows the call center to process incoming calls, record caller information, save notes, and transmit the call information to Great Direct Concepts' corporate headquarters.",
+                            text: "A logic-based call script for Great Direct Concepts LLC. that allows the call center to process incoming calls, record caller information, save notes, and transmit the call information to Great Direct Concepts' corporate headquarters.",
                             textsize: 16.0,
                             color: Colors.white.withOpacity(0.4),
                             letterSpacing: 0.75,

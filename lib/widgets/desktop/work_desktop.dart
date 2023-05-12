@@ -4,15 +4,12 @@ import 'package:app_portfolio/widgets/work_box.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class WorkDesktop extends StatefulWidget {
-  @override
-  _WorkDesktopState createState() => _WorkDesktopState();
-}
-
-class _WorkDesktopState extends State<WorkDesktop> {
+class WorkDesktop extends StatelessWidget {
+  final Size size;
+  const WorkDesktop({Key? key, required this.size}) : super(key: key);
+ 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return ConstrainedBox(
       constraints: BoxConstraints.tightFor(
         width: size.width,

@@ -18,7 +18,7 @@ abstract class AppConstants {
       'MOBILE APPLICATIONS EITHER DEVELOPED COMPLETELY BY ME OR BY A TEAM WHERE I PARTICIPATED SIGNIFICANTLY';
   static const landingTitle = 'Jake Stegeman';
   static const bio_1 =
-      "Hello! I'm Jake, a developer located in Overland Park, Kansas.\n\nFor the last 3 years, I've worked as a freelance developer specializing in developing mobile and web apps using the Flutter SDK. My goal is to build high quality, performant apps with a high degree of Customer satisfaction.\n\n";
+      "Hello! I'm Jake, a developer located in Overland Park, Kansas.\n\nFor the last 3 years, I've worked as a freelance developer specializing in developing mobile and web apps using the Flutter SDK. My goal is to build responsive, high-quality apps that directly match my clients' specifications.\n\n";
   static const bio_2 =
       "In December of 2022, I graduated with my Bachelor's degree in Mechanical Engineering from Kansas State University, with a double minor in Computer Science and Business.\n\n";
   static const bio_3 =

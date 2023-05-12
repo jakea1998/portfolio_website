@@ -6,11 +6,12 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SocialIconsDesktop extends StatelessWidget {
-  SocialIconsDesktop({super.key});
+  final Size size;
+  SocialIconsDesktop({super.key,required this.size});
   final method = UrlLauncher();
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    
     return Container(
       width: size.width * 0.09,
       height: size.height - 82,

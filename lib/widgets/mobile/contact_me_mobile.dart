@@ -44,7 +44,7 @@ class ContactMeMobile extends StatelessWidget {
                         alignment: WrapAlignment.center,
                         children: [
                           Text(
-                            "If you'd like to contact me regarding a job opportunity, project, or just want to say hi, please reach out! I'll get back to you as soon as possible.",
+                            "If you'd like to contact me regarding a job opportunity, project, or would like to request references, please reach out! I'll get back to you as soon as possible.",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white.withOpacity(0.4),
