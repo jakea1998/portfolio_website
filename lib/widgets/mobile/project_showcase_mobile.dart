@@ -1,5 +1,5 @@
 import 'package:app_portfolio/constants/app_constants.dart';
-import 'package:app_portfolio/ui/featured_project.dart';
+import 'package:app_portfolio/widgets/featured_project.dart';
 import 'package:app_portfolio/widgets/app_showcase_model.dart';
 import 'package:app_portfolio/widgets/custom_text.dart';
 import 'package:app_portfolio/widgets/main_title.dart';
@@ -26,7 +26,7 @@ class ProjectShowcaseMobile extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-            color: Color(0xff717C99),
+            color: Color(0xffCCD6F6).withOpacity(0.7),
             letterSpacing: 1.75,
           ),
         )

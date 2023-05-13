@@ -1,5 +1,5 @@
 import 'package:app_portfolio/constants/app_constants.dart';
-import 'package:app_portfolio/ui/featured_project.dart';
+import 'package:app_portfolio/widgets/featured_project.dart';
 import 'package:app_portfolio/widgets/app_showcase_model.dart';
 import 'package:app_portfolio/widgets/main_title.dart';
 import 'package:app_portfolio/widgets/showcase_app_item.dart';

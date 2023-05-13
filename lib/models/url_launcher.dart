@@ -11,14 +11,7 @@ class UrlLauncher {
   }
 }
 
- launchCaller() async {
-    const url = "tel:9137068155";   
-    if (await canLaunch(url)) {
-       await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }   
-}
+
 
 launchEmail() async {
       if (await canLaunch("mailto:jake_stegeman@yahoo.com")) {

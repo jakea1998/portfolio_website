@@ -69,7 +69,7 @@ class FeatureProject extends StatelessWidget {
                           child: CustomText(
                             text: projectDesc ?? "",
                             textsize: 16.0,
-                            color: Colors.white.withOpacity(0.4),
+                            color: Colors.white.withOpacity(0.7),
                             letterSpacing: 0.75,
                           ),
                         ),

@@ -22,7 +22,7 @@ class AboutMobile extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-            color: Color(0xff717C99),
+            color: Color(0xffCCD6F6).withOpacity(0.7),
             letterSpacing: 1.75,
           ),
         )
@@ -80,7 +80,7 @@ class AboutMobile extends StatelessWidget {
                             text:
                                 AppConstants.bio_1,
                             textsize: 16.0,
-                            color: Color(0xff828DAA),
+                            color: Color(0xffCCD6F6).withOpacity(0.7),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
@@ -88,7 +88,7 @@ class AboutMobile extends StatelessWidget {
                             text:
                                 AppConstants.bio_2,
                             textsize: 16.0,
-                            color: Color(0xff828DAA),
+                            color: Color(0xffCCD6F6).withOpacity(0.7),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),
@@ -96,7 +96,7 @@ class AboutMobile extends StatelessWidget {
                             text:
                                AppConstants.bio_3,
                             textsize: 16.0,
-                            color: Color(0xff828DAA),
+                            color: Color(0xffCCD6F6).withOpacity(0.7),
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.75,
                           ),

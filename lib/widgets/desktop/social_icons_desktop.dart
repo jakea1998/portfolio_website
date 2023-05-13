@@ -12,7 +12,7 @@ class SocialIconsDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return Container(
+    return  Container(
       width: size.width * 0.09,
       height: size.height - 82,
       child: Column(

@@ -3,7 +3,7 @@ import 'package:app_portfolio/constants/app_constants.dart';
 import 'package:app_portfolio/models/url_launcher.dart';
 import 'package:app_portfolio/widgets/desktop/about_desktop.dart';
 import 'package:app_portfolio/widgets/desktop/contact_me_desktop.dart';
-import 'package:app_portfolio/ui/featured_project.dart';
+import 'package:app_portfolio/widgets/featured_project.dart';
 import 'package:app_portfolio/widgets/desktop/project_showcase_desktop.dart';
 
 import 'package:app_portfolio/widgets/desktop/work_desktop.dart';
