@@ -17,7 +17,7 @@ class WorkMobile extends StatelessWidget {
     return ConstrainedBox(
       constraints: BoxConstraints.tightFor(
         width: size.width,
-        height: size.height * 1.4,
+        height: size.height * 1.55,
       ),
       child: Column(
         children: [
@@ -57,7 +57,7 @@ class WorkMobile extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child:  Container(
-                    height: size.height * 1.2,
+                    height: size.height * 1.3,
                     //color: Colors.indigo,
                     child: Stack(
                       children: [
