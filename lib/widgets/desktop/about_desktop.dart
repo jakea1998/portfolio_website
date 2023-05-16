@@ -143,17 +143,17 @@ class AboutDesktop extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(flex: 1,)
+          Spacer(flex: 1,),
           //Profile Image
-          /* Expanded(
+           Expanded(
             child: Container(
-              height: size.height / 1.5,
-              width: size.width / 2 - 100,
+              height: size.height *0.7,
+              width: size.width *0.4,
               // color: Colors.white,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  Positioned(
+                  /* Positioned(
                     top: size.height * 0.12,
                     left: size.width * 0.120,
                     child: Card(
@@ -164,13 +164,14 @@ class AboutDesktop extends StatelessWidget {
                         width: size.width / 5,
                         color: Color(0xff0A192F),
                       ),
+                      
                     ),
-                  ),
+                  ), */
                   CustomImageAnimation()
                 ],
               ),
             ),
-          ), */
+          ), 
         ],
       ),
     );
@@ -217,29 +218,28 @@ class _CustomImageAnimationState extends State<CustomImageAnimation> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return MouseRegion(
+    return /* MouseRegion(
       onEnter: _incrementEnter,
       onHover: _updateLocation,
       onExit: _incrementExit,
-      child: Stack(
+      child: */ Stack(
         children: [
           Container(
-              height: size.height / 2,
-              width: size.width / 5,
+              height: size.height *0.7,
+              width: size.width *0.35,
               color: Colors.black54,
-              child: /* Image(
+              child:  Image(
               fit: BoxFit.cover,
-              image: ,
-            ), */
-                  Icon(Icons.person,
-                      color: AppConstants.secondaryColor, size: 50)),
-          Container(
+              image: const AssetImage("${AppConstants.isReleaseMode ? "assets/" : ""}images/jake_full_body.png"),
+            ), 
+                 ),
+          /* Container(
             height: size.height / 2,
             width: size.width / 5,
-            color: customImageColor,
-          ),
+            color: Colors.transparent,
+          ), */
         ],
-      ),
+    
     );
   }
 }

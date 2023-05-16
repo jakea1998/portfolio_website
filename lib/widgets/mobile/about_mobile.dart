@@ -150,10 +150,10 @@ class AboutMobile extends StatelessWidget {
               ),
 
               //Image
-              /* Center(
+               Center(
                 child: Container(
-                  height: size.height * 0.6,
-                  width: size.width * 0.7,
+                  height: size.height * 0.7,
+                  width: size.width * 0.5,
                   child: Stack(
                     children: [
                       Positioned(
@@ -164,29 +164,29 @@ class AboutMobile extends StatelessWidget {
                           color: Color(0xff61F9D5),
                           child: Container(
                             margin: EdgeInsets.all(2.75),
-                            height: size.height * 0.45,
-                            width: size.width * 0.66,
+                            height: size.height * 0.6,
+                            width: size.width * 0.35,
                             color: Color(0xff0A192F),
                           ),
                         ),
                       ),
                       Container(
-                        height: size.height * 0.5,
-                        width: size.width * 0.6,
-                        /* child: Image(
+                        height: size.height * 0.6,
+                        width: size.width * 0.35,
+                        child: Image(
                           fit: BoxFit.cover,
-                          image: AssetImage("images/pic1.jpeg"),
-                        ), */
+                          image: AssetImage("${AppConstants.isReleaseMode ? "assets/" : ""}images/jake_full_body.png"),
+                        ),
                       ),
-                      Container(
+                      /* Container(
                         height: size.height * 0.5,
                         width: size.width * 0.6,
                         color: AppConstants.secondaryColor.withOpacity(0.5),
-                      ),
+                      ), */
                     ],
                   ),
                 ),
-              ), */
+              ), 
     ],);
   }
 }
